@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Array sequence</title>
+</head>
+<body>
+<script>
+    var array_size = parseInt(prompt("Enter array  size", "")),
+        arr = new Array(array_size);
+    let increasing = 0,
+        decreasing = 0;
+
+    document.write("Array with random number: ");
+    for (i = 0; i < array_size; i++) {
+        arr[i] = Math.floor((Math.random() * 99));
+        document.write(arr[i] + ", ");
+    }
+    document.write("<br>");
+    i = 0;
+
+    while (i < array_size) {
+
+        if (arr[i] < arr[i + 1]) {
+            increasing += 1;
+        } else if (arr[i] > arr[i + 1]) {
+            decreasing += 1;
+        }
+
+        i++;
+    }
+
+    if (increasing >= decreasing) {
+        if (increasing > decreasing)
+            document.write("Sequence increasing");
+        else
+            document.write("Sequence decreasing");
+    } else {
+
+        document.write("Sequence chaotic");
+    }
+
+</script>
+</body>
+</html>
